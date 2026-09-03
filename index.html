@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Password Creator</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+        <h1>Password Creator</h1>
+        <form>
+        <label for="pwd">Password:</label>
+         <div class="password-box">
+             <input type="password" id="pwd" name="pwd" required>
+             <button type="button" class="toggle" id="togglepwd">👁️</button>  
+        </div>
+       
+        <label for="cpwd">Confirm Password:</label>
+        <div class="password-box">
+            <input type="password" id="cpwd" name="cpwd" required>
+            <button type="button" class="toggle" id="togglecpwd">👁️</button>
+        </div>
+
+        <div class="requirements">
+            <h3>Password must contain:</h3>
+
+            <p id="letter" class="invalid">
+                A <b>lowercase</b> letter
+            </p>
+
+            <p id="capital" class="invalid">
+                A <b>uppercase</b> letter
+            </p>
+
+            <p id="number" class="invalid">
+                A <b>number</b> 
+            </p>
+
+            <p id="special" class="invalid">
+                A <b>special character</b> 
+            </p>
+
+            <p id="length" class="invalid">
+                Minimum <b>8 characters</b>
+            </p>
+        </div>
+         <div class="buttons">
+        <button id="create">Create Password</button>
+        <button id="copy">Copy</button>
+        </div>
+        <p id="message"></p>
+        </form>
+        </div>
+      
+        <script src="script.js"></script>
+
+    </body>
+</html>
