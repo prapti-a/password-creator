@@ -92,8 +92,9 @@ pwd.onkeyup = function()
         length.classList.add("invalid");
     }  
 }
-create.onclick = function()
+create.onclick = function(event)
 {
+    event.preventDefault();
     if(pwd.value === cpwd.value)
     {
         message.textContent = "Password created successfully!";
