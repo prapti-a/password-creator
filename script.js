@@ -95,14 +95,32 @@ pwd.onkeyup = function()
 create.onclick = function(event)
 {
     event.preventDefault();
-    if(pwd.value === cpwd.value)
+    
+    var validpassword = pwd.value.match(/[a-z]/) && pwd.value.match(/[A-Z]/) && pwd.value.match(/[0-9]/) && pwd.value.match(/[!@#$%^&*]/) && pwd.value.length >=8;
+    if(!validpassword)
     {
-        message.textContent = "Password created successfully!";
+        message.textContent = "Password does not meet all requirements!";
     }
-    else{
+    else if(pwd.value !== cpwd.value)
+    {
         message.textContent = "Passwords do not match!";
     }
+    else 
+    {
+        message.textContent = "Password created successfully!";
+
+        navigator.clipboard.writeText(pwd.value)
+        .then(function()
+        {
+             message.textContent = "Password created successfully and copied!";
+        })
+         .catch(function()
+        {
+             message.textContent = "Password created successfully, but couldn't copy!";
+        });
+    }
 }
+
 copy.onclick = function()
 {
     if(pwd.value === "")
